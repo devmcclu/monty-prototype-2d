@@ -408,8 +408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 315569454484333224}
   shooterRigid: {fileID: 315569454484333237}
-  shootPower: 5
-  frequencyForce: 5
+  shootPower: 1
+  frequencyForce: 1
 --- !u!1 &315569455685494680
 GameObject:
   m_ObjectHideFlags: 0
