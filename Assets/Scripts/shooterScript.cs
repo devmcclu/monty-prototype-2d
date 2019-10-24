@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shooterScript : MonoBehaviour
+public class ShooterScript : MonoBehaviour
 {
     public GameObject shooter;
     public Rigidbody2D shooterRigid;
@@ -10,8 +10,8 @@ public class shooterScript : MonoBehaviour
 
     Vector3 shootDirection;
 
-    public float shootPower = 5;
-    public float frequencyForce = 5;
+    public float shootPower = 1;
+    public float frequencyForce = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -33,25 +33,29 @@ public class shooterScript : MonoBehaviour
             //set spring frequency to however fast we want the player to follow its arm
             shooterSpring = shooter.GetComponent<SpringJoint2D>();
             shooterSpring.frequency = frequencyForce;
-
         }
 
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetAxis("Fire2") > 0)
         {
-            //let the arm move
-            shooterRigid.isKinematic = false;
-
-            //get the direction the mouse is in, apply force to throw along that direction
-            shootDirection = Input.mousePosition;
-            shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-            shootDirection = shootDirection - transform.position;
-
-            shooterRigid.AddForce(shootDirection * shootPower, ForceMode2D.Impulse);
+            shootArm();
         }
+    }
+
+    private void shootArm(){
+        //let the arm move
+        shooterRigid.isKinematic = false;
+
+        //get the direction the mouse is in, apply force to throw along that direction
+        shootDirection = Input.mousePosition;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection = shootDirection - transform.position;
+
+        shooterRigid.AddForce(shootDirection * shootPower, ForceMode2D.Impulse);
+
     }
 
 }
