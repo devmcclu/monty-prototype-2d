@@ -450,7 +450,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -625,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347446260752985388}
   - component: {fileID: 3893534110324195536}
+  - component: {fileID: 3165949037987958659}
   m_Layer: 0
   m_Name: ArmHolder
   m_TagString: Untagged
@@ -673,3 +674,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &3165949037987958659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298039606911256449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffcac9a50424cc4fa65a5a926a985a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 315569455685494680}
