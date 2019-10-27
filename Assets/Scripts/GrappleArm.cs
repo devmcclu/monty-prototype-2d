@@ -45,6 +45,7 @@ public class GrappleArm : MonoBehaviour
 
         if (fired)
         {
+            //Create the rope vertices
             rope.positionCount = 2;
             rope.SetPosition(0, armHolder.transform.position);
             rope.SetPosition(1, arm.transform.position);
@@ -67,6 +68,9 @@ public class GrappleArm : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, arm.transform.position, Time.deltaTime * playerTravelSpeed);
             float distanceToArm = Vector3.Distance(transform.position, arm.transform.position);
 
+            //Make the player Kinematic so only the force of the arm affects them
+            this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
             if(distanceToArm < .01)
             {
                 //ReturnArm();
@@ -81,6 +85,8 @@ public class GrappleArm : MonoBehaviour
             }
         } else {
             arm.transform.parent = armHolder.transform;
+            //Go back to normal body type
+            this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
@@ -91,12 +97,14 @@ public class GrappleArm : MonoBehaviour
     }
 
     void ReturnArm()
-    {
+    {   
+        //Put the arm back in the arm holder
         arm.transform.rotation = armHolder.transform.rotation;
         arm.transform.position = armHolder.transform.position;
+        //Reset the variables
         fired = false;
         grabbed = false;
-
+        //Remove the rope
         rope.positionCount = 0;
     }
 
