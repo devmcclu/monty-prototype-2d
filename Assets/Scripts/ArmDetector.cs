@@ -11,8 +11,8 @@ public class ArmDetector : MonoBehaviour
     {
         if (collision.tag == "ForeGround")
         {
-            player.GetComponent<GrappleArm>().hooked = true;
-            player.GetComponent<GrappleArm>().hookedObj = collision.gameObject;
+            player.GetComponent<GrappleArm>().grabbed = true;
+            player.GetComponent<GrappleArm>().grabbedObj = collision.gameObject;
         }
     }
 }

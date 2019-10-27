@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class GrappleArm : MonoBehaviour
 {
+    //The Arm of the player
     public GameObject arm;
+    //Empty game object where arm always goes back to
     public GameObject armHolder;
 
+    //How fast the arm moves
     public float armTravelSpeed;
+    //How fast the player moves when hooked
     public float playerTravelSpeed;
 
-    public static bool fired = false;
-    public bool hooked;
-    public GameObject hookedObj;
+    public static bool fired = false;      
+    //If the player has grabbed something
+    public bool grabbed;
+    //What the player has grabbed
+    public GameObject grabbedObj;
 
+    //How far the arm can go
     public float maxDistance;
+    //How far away from the armHolder the arm is
     private float currentDistance;
 
     private bool grounded;
@@ -30,7 +38,7 @@ public class GrappleArm : MonoBehaviour
     private void Update()
     {
         //firing the hook
-        if (Input.GetMouseButtonDown(1) && fired == false)
+        if (Input.GetAxis("Fire2") > 0 && fired == false)
         {
             fired = true;
         }
@@ -42,7 +50,7 @@ public class GrappleArm : MonoBehaviour
             rope.SetPosition(1, arm.transform.position);
         }
 
-        if (fired == true && hooked == false)
+        if (fired == true && grabbed == false)
         {
             arm.transform.Translate(Vector3.right * Time.deltaTime * armTravelSpeed);
             currentDistance = Vector3.Distance(transform.position, arm.transform.position);
@@ -53,17 +61,16 @@ public class GrappleArm : MonoBehaviour
             }
         }
 
-        if (hooked == true && fired == true)
+        if (grabbed == true && fired == true)
         {
-            arm.transform.parent = hookedObj.transform;
+            arm.transform.parent = grabbedObj.transform;
             transform.position = Vector3.MoveTowards(transform.position, arm.transform.position, Time.deltaTime * playerTravelSpeed);
             float distanceToArm = Vector3.Distance(transform.position, arm.transform.position);
-
-            //this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
             if(distanceToArm < .01)
             {
                 //ReturnArm();
+                CheckIfGrounded();
                 if (grounded == false)
                 {
                     this.transform.Translate(Vector3.right * Time.deltaTime * 1.7f);
@@ -74,7 +81,6 @@ public class GrappleArm : MonoBehaviour
             }
         } else {
             arm.transform.parent = armHolder.transform;
-            //this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         }
     }
 
@@ -89,7 +95,7 @@ public class GrappleArm : MonoBehaviour
         arm.transform.rotation = armHolder.transform.rotation;
         arm.transform.position = armHolder.transform.position;
         fired = false;
-        hooked = false;
+        grabbed = false;
 
         rope.positionCount = 0;
     }
@@ -98,7 +104,6 @@ public class GrappleArm : MonoBehaviour
     {
         RaycastHit hit;
         float distance = .1f;
-
         Vector3 dir = new Vector3(0, -1);
 
         if (Physics.Raycast(transform.position, dir, out hit, distance))
