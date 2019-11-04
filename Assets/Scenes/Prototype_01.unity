@@ -315,6 +315,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 4.041162
       objectReference: {fileID: 0}
+    - target: {fileID: 8529836708485821283, guid: 93dcf7fd80c8efa458ecb1f035352528,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0030036569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8529836708485821283, guid: 93dcf7fd80c8efa458ecb1f035352528,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.23608077
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93dcf7fd80c8efa458ecb1f035352528, type: 3}
 --- !u!4 &368340455 stripped
@@ -853,7 +863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020972987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4969962, y: -0.888357, z: 4.035213}
+  m_LocalPosition: {x: -1.38, y: -0.888357, z: 4.035213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 177944790}
@@ -1298,6 +1308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tileset-sliced_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385850242747803181, guid: 93dcf7fd80c8efa458ecb1f035352528,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2385850242747803182, guid: 93dcf7fd80c8efa458ecb1f035352528,
         type: 3}
