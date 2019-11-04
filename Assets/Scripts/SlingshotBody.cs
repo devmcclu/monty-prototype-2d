@@ -48,6 +48,8 @@ public class SlingshotBody : MonoBehaviour
             stretchedBody.positionCount = 2;
             stretchedBody.SetPosition(0, bodyHolder.transform.position);
             stretchedBody.SetPosition(1, body.transform.position);
+
+            body.transform.parent = grabbedObj.transform;
         }
 
         if (grabbed == true)
