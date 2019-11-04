@@ -5,21 +5,27 @@ using UnityEngine;
 public class SlingshotBody : MonoBehaviour
 {
     //Object the player has grabbed
-    public GameObject grabbedObject;
+    public GameObject grabbedObj;
     //The player's body
     public GameObject body;
 
     //Speed at which the player can walk when holding something
     public float holdSpeed;
 
+    public bool grabbed = false;
+    //Check if the player is near a grabable item
+    public bool nearGrabable = false;
+
     //Representation of the player's body when stretching
     public LineRenderer stretchedBody;
-
     
     //How far the body can go
     public float maxDistance;
     //How far away from the player the body is
     private float currentDistance;
+
+    //
+    public float slingThrust;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +36,63 @@ public class SlingshotBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //firing the hook
+        if (Input.GetAxis("Fire1") > 0 && grabbed == false && nearGrabable == true)
+        {
+            grabbed = true;
+            this.GetComponent<MovementScript>().speed = holdSpeed;
+
+            //Create the stretchedBody vertices
+            stretchedBody.positionCount = 2;
+            stretchedBody.SetPosition(0, this.transform.position);
+            stretchedBody.SetPosition(1, body.transform.position);
+        }
+
+        if (grabbed == true)
+        {
+            //stretchedBody.SetPosition(0, this.transform.position);
+            //stretchedBody.SetPosition(1, body.transform.position);
+            //Move the arm towards the firing direction
+            //arm.transform.Translate(Vector3.right * Time.deltaTime * armTravelSpeed);
+            currentDistance = Vector3.Distance(transform.position, body.transform.position);
+
+            //If the player moves too far, stop the player from moving
+            if(currentDistance >= maxDistance)
+            {
+                holdSpeed = 0;
+                this.GetComponent<MovementScript>().speed = holdSpeed;
+            }
+        }
+
+        if (Input.GetAxis("Fire1") == 0 && grabbed == true)
+        {
+            FlingBody();
+        }
+    }
+
+    void FlingBody()
+    {   
+        Vector2 direction = new Vector2(
+                                body.transform.position.x - this.transform.position.x,
+                                body.transform.position.y - this.transform.position.y);
+
+        this.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * (slingThrust * direction.magnitude));
+        //Put the body back in the body holder
+        body.transform.rotation = this.transform.rotation;
+        body.transform.position = this.transform.position;
+        //Reset the variables
+        grabbed = false;
+        //Remove the rope
+        stretchedBody.positionCount = 0;
+    }
+
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "ForeGround")
+        {
+            grabbed = true;
+            grabbedObj = collision.gameObject;
+        }
     }
 }
