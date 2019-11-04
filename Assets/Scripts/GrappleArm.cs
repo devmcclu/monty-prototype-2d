@@ -53,19 +53,25 @@ public class GrappleArm : MonoBehaviour
 
         if (fired == true && grabbed == false)
         {
+            //Move the arm towards the firing direction
             arm.transform.Translate(Vector3.right * Time.deltaTime * armTravelSpeed);
             currentDistance = Vector3.Distance(transform.position, arm.transform.position);
 
+            //If the arm does not grab something before it's max distance, return it to the body
             if(currentDistance >= maxDistance)
             {
                 ReturnArm();
             }
         }
 
+        //When the player grabs something
         if (grabbed == true && fired == true)
         {
+            //The arm becomes a child of the grabbed object
             arm.transform.parent = grabbedObj.transform;
+            //Move the player towards the arm
             transform.position = Vector3.MoveTowards(transform.position, arm.transform.position, Time.deltaTime * playerTravelSpeed);
+            //Calculate the current distance left ot the arm
             float distanceToArm = Vector3.Distance(transform.position, arm.transform.position);
 
             //Make the player Kinematic so only the force of the arm affects them
