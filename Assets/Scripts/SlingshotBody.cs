@@ -54,8 +54,8 @@ public class SlingshotBody : MonoBehaviour
 
         if (grabbed == true)
         {
-            //stretchedBody.SetPosition(0, this.transform.position);
-            //stretchedBody.SetPosition(1, body.transform.position);
+            stretchedBody.SetPosition(0, bodyHolder.transform.position);
+            stretchedBody.SetPosition(1, body.transform.position);
             //Move the arm towards the firing direction
             //arm.transform.Translate(Vector3.right * Time.deltaTime * armTravelSpeed);
             currentDistance = Vector3.Distance(transform.position, body.transform.position);
