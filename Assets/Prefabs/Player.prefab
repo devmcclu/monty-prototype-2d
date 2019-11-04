@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 315569453750835550}
   - component: {fileID: 315569453750835551}
   - component: {fileID: 3766079907000429104}
+  - component: {fileID: 2013794881602593052}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -90,6 +91,23 @@ MonoBehaviour:
   grabbedObj: {fileID: 0}
   maxDistance: 2
   rope: {fileID: 0}
+--- !u!114 &2013794881602593052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315569453750835548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1b5d63ac0bd9f4eb5de533cf006a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbedObject: {fileID: 0}
+  body: {fileID: 315569455685494680}
+  holdSpeed: 0
+  stretchedBody: {fileID: 0}
+  maxDistance: 0
 --- !u!1 &315569453939281775
 GameObject:
   m_ObjectHideFlags: 0
