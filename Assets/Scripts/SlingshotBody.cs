@@ -9,6 +9,8 @@ public class SlingshotBody : MonoBehaviour
     //The player's body
     public GameObject body;
 
+    public GameObject bodyHolder;
+
     //Speed at which the player can walk when holding something
     public float holdSpeed;
 
@@ -44,7 +46,7 @@ public class SlingshotBody : MonoBehaviour
 
             //Create the stretchedBody vertices
             stretchedBody.positionCount = 2;
-            stretchedBody.SetPosition(0, this.transform.position);
+            stretchedBody.SetPosition(0, bodyHolder.transform.position);
             stretchedBody.SetPosition(1, body.transform.position);
         }
 
@@ -73,13 +75,14 @@ public class SlingshotBody : MonoBehaviour
     void FlingBody()
     {   
         Vector2 direction = new Vector2(
-                                body.transform.position.x - this.transform.position.x,
-                                body.transform.position.y - this.transform.position.y);
+                                body.transform.position.x - bodyHolder.transform.position.x,
+                                body.transform.position.y - bodyHolder.transform.position.y);
 
         this.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * (slingThrust * direction.magnitude));
+        body.transform.rotation = bodyHolder.transform.rotation;
+        body.transform.position = bodyHolder.transform.position;
         //Put the body back in the body holder
-        body.transform.rotation = this.transform.rotation;
-        body.transform.position = this.transform.position;
+        body.transform.parent = bodyHolder.transform;
         //Reset the variables
         grabbed = false;
         //Remove the rope
@@ -91,7 +94,16 @@ public class SlingshotBody : MonoBehaviour
     {
         if (collision.tag == "ForeGround")
         {
-            grabbed = true;
+            nearGrabable = true;
+            grabbedObj = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "ForeGround")
+        {
+            nearGrabable = false;
             grabbedObj = collision.gameObject;
         }
     }
