@@ -395,6 +395,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5.41
       objectReference: {fileID: 0}
+    - target: {fileID: 3091599067959364688, guid: e340e4ae3314221498fe93c6ec70cb83,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e340e4ae3314221498fe93c6ec70cb83, type: 3}
 --- !u!1 &1967273106 stripped
@@ -454,7 +459,7 @@ GameObject:
   - component: {fileID: 2033283251}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ForeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5304,6 +5309,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315569455685493860, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 315569453750835551, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766079907000429104, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: armTravelSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766079907000429104, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: maxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766079907000429104, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: playerTravelSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766079907000429104, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: bumpUp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766079907000429104, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: bumpRight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014580424, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d, type: 3}
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}

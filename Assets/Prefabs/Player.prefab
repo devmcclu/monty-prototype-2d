@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 315569453750835548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.006, y: -0.17602763, z: -0.037841797}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 315569454401587019}
   - {fileID: 4059312695727180967}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca8c71e2e0a7414085bb21aab2d983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
 --- !u!114 &3766079907000429104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,11 +86,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arm: {fileID: 315569454484333224}
   armHolder: {fileID: 1298039606911256449}
-  armTravelSpeed: 2
-  playerTravelSpeed: 3
+  armTravelSpeed: 5
+  playerTravelSpeed: 7
+  bumpUp: 10
+  bumpRight: 10
   grabbed: 0
   grabbedObj: {fileID: 0}
-  maxDistance: 2
+  maxDistance: 10
   rope: {fileID: 0}
 --- !u!114 &2013794881602593052
 MonoBehaviour:
