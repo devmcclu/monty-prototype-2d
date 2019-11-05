@@ -14,6 +14,10 @@ public class GrappleArm : MonoBehaviour
     //How fast the player moves when hooked
     public float playerTravelSpeed;
 
+    //Values to push the player up a ledge when running into it
+    public float bumpUp;
+    public float bumpRight;
+
     public static bool fired = false;      
     //If the player has grabbed something
     public bool grabbed;
@@ -83,8 +87,8 @@ public class GrappleArm : MonoBehaviour
                 CheckIfGrounded();
                 if (grounded == false)
                 {
-                    this.transform.Translate(Vector3.right * Time.deltaTime * 1.7f);
-                    this.transform.Translate(Vector3.up * Time.deltaTime * 1.8f);
+                    this.transform.Translate(Vector3.right * Time.deltaTime * bumpRight);
+                    this.transform.Translate(Vector3.up * Time.deltaTime * bumpUp);
                 }
 
                 StartCoroutine("Climb");
