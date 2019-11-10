@@ -422,6 +422,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origScale: {x: 0, y: 0, z: 0}
   largeScale: {x: 10, y: 10, z: 10}
+  oldSpeed: 0
+  slowSpeed: 0.5
+  moveScript: {fileID: 0}
 --- !u!1 &1967273106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3091599067959364690, guid: e340e4ae3314221498fe93c6ec70cb83,
