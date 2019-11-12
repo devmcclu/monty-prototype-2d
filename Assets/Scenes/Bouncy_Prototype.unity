@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 300
   playerRigid: {fileID: 315569455559801133}
+  playerCol: {fileID: 0}
 --- !u!114 &97602627
 MonoBehaviour:
   m_ObjectHideFlags: 0
