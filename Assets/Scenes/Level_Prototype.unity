@@ -5307,10 +5307,20 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 315569454401587028, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 315569455685493860, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
         type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 315569455685493860, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 315569453750835551, guid: cefdc6d3a22f69d41bfbbc50ab80ce7d,
         type: 3}
