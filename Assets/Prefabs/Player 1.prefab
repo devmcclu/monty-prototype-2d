@@ -77,9 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arm: {fileID: 0}
   posPushRight: 0
-  posPushUp: 0
   negPushRight: 0
-  negPushUp: 0
 --- !u!1 &5847522032218655195
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +504,8 @@ MonoBehaviour:
   armHolder: {fileID: 5135267771444005136}
   armTravelSpeed: 5
   playerTravelSpeed: 7
-  bumpUp: 50
-  bumpRight: 50
+  bumpUp: 100
+  bumpRight: 100
   grabbed: 0
   grabbedObj: {fileID: 0}
   maxDistance: 10
