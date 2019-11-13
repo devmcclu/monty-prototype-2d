@@ -75,6 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffcac9a50424cc4fa65a5a926a985a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arm: {fileID: 0}
+  posPushRight: 0
+  posPushUp: 0
+  negPushRight: 0
+  negPushUp: 0
 --- !u!1 &5847522032218655195
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,11 +527,13 @@ MonoBehaviour:
   grabbedObj: {fileID: 0}
   body: {fileID: 5847522033535232265}
   bodyHolder: {fileID: 5133536729003534109}
+  movement: {fileID: 0}
   holdSpeed: 5
+  orgSpeed: 0
   grabbed: 0
   nearGrabable: 0
   stretchedBody: {fileID: 0}
-  maxDistance: 25
+  maxDistance: 5
   slingThrust: 200
 --- !u!61 &3925531935278110613
 BoxCollider2D:
@@ -541,7 +548,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03867142, y: -0.1639668}
+  m_Offset: {x: 0.054220263, y: -0.17490856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -552,7 +559,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37265715, y: 0.4060073}
+  m_Size: {x: 0.30667323, y: 0.35187426}
   m_EdgeRadius: 0
 --- !u!114 &6145076968430248608
 MonoBehaviour:
