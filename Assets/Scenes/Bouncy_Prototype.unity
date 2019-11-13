@@ -5440,35 +5440,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5671682537749475213, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: slingThrust
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5671682537749475213, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: maxDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3925531935278110613, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.17490856
-      objectReference: {fileID: 0}
-    - target: {fileID: 3925531935278110613, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.30667323
-      objectReference: {fileID: 0}
-    - target: {fileID: 3925531935278110613, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.35187426
-      objectReference: {fileID: 0}
-    - target: {fileID: 3925531935278110613, guid: 0e3bcbde5cbdc974cb9c292477d5738e,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.054220263
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e3bcbde5cbdc974cb9c292477d5738e, type: 3}
