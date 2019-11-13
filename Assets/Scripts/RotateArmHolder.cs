@@ -33,7 +33,7 @@ public class RotateArmHolder : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        Debug.Log(this.transform.rotation.eulerAngles.z);
+        //Debug.Log(this.transform.rotation.eulerAngles.z);
         if (this.transform.rotation.eulerAngles.z > 90f && this.transform.rotation.eulerAngles.z < 270f){
             arm.bumpRight = negPushRight;
         } else {
