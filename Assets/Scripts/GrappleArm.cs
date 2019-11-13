@@ -81,7 +81,7 @@ public class GrappleArm : MonoBehaviour
             //Make the player Kinematic so only the force of the arm affects them
             this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
-            if(distanceToArm < .01)
+            if(distanceToArm < .2)
             {
                 //ReturnArm();
                 CheckIfGrounded();
