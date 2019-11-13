@@ -10,9 +10,11 @@ public class SlingshotBody : MonoBehaviour
     public GameObject body;
 
     public GameObject bodyHolder;
+    public MovementScript movement;
 
     //Speed at which the player can walk when holding something
     public float holdSpeed;
+    public float orgSpeed;
 
     public bool grabbed = false;
     //Check if the player is near a grabable item
@@ -31,7 +33,9 @@ public class SlingshotBody : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        movement = this.GetComponent<MovementScript>();
+        orgSpeed = movement.speed;
         stretchedBody = body.GetComponent<LineRenderer>();
     }
 
@@ -64,13 +68,14 @@ public class SlingshotBody : MonoBehaviour
             if(currentDistance >= maxDistance)
             {
                 holdSpeed = 0;
-                this.GetComponent<MovementScript>().speed = holdSpeed;
+                movement.speed = holdSpeed;
             }
         }
 
         if (Input.GetAxis("Fire1") == 0 && grabbed == true)
         {
             FlingBody();
+            movement.speed = orgSpeed;
         }
     }
 
