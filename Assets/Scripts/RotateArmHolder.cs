@@ -6,11 +6,19 @@ public class RotateArmHolder : MonoBehaviour
 {
     //public GameObject top;
     //private Vector3 lookPos;
+    public GrappleArm arm;
+
+    public float posPushRight;
+    public float posPushUp;
+    public float negPushRight;
+    public float negPushUp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        arm = GetComponentInParent<GrappleArm>();
+        posPushRight = arm.bumpRight;
+        negPushRight -= posPushRight;
     }
 
     // Update is called once per frame
@@ -26,5 +34,11 @@ public class RotateArmHolder : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        if (this.transform.rotation.z > 90f || this.transform.rotation.z < -90f){
+            arm.bumpRight = negPushRight;
+        } else {
+            arm.bumpRight = posPushRight;
+        }
     }
 }
