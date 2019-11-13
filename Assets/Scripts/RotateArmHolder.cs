@@ -15,6 +15,7 @@ public class RotateArmHolder : MonoBehaviour
     void Start()
     {
         arm = GetComponentInParent<GrappleArm>();
+        //Get the value for pushing right, and make a negative version
         posPushRight = arm.bumpRight;
         negPushRight -= posPushRight;
     }
@@ -33,7 +34,7 @@ public class RotateArmHolder : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        //Debug.Log(this.transform.rotation.eulerAngles.z);
+        //See if the player has their arm aimed left and set the push accordingly
         if (this.transform.rotation.eulerAngles.z > 90f && this.transform.rotation.eulerAngles.z < 270f){
             arm.bumpRight = negPushRight;
         } else {
