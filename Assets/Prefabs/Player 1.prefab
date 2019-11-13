@@ -883,14 +883,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6145076967194154963}
   - component: {fileID: 6145076967194154966}
-  - component: {fileID: 6145076967194154960}
+  - component: {fileID: 1033306755}
   m_Layer: 0
   m_Name: Belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6145076967194154963
 Transform:
   m_ObjectHideFlags: 0
@@ -953,8 +953,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6145076967194154960
-CircleCollider2D:
+--- !u!70 &1033306755
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -966,6 +966,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.10000002
+  m_Offset: {x: 0.045870807, y: 0.0010307948}
+  m_Size: {x: 0.07939608, y: 0.13609022}
+  m_Direction: 0
