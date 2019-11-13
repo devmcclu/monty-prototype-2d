@@ -21,11 +21,11 @@ public class JumpScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            Debug.Log("hello");
+            //Debug.Log("hello");
             playerRigid.AddForce(Vector2.up * jumpForce);
         }
 
-        Debug.Log(isGrounded);
+       // Debug.Log(isGrounded);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
